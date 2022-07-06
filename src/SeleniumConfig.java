@@ -55,12 +55,29 @@ public class SeleniumConfig {
         driver.quit();  // Kills your session and the driver instance and of course closes the browser window.
 */
 
-    // Practice exercise 1
+ /*     // Practice exercise 1
         driverGet(driver, url);
         System.out.println(driver.getTitle() + " " + driver.getTitle().length());
         System.out.println(driver.getCurrentUrl().equalsIgnoreCase(url));
         System.out.println(driver.getPageSource().length());
         driver.quit();
+  */
+ /*       // navigate, refresh, exercise 2.
+        driver.navigate().to(url);
+        driver.findElement(By.id("js-link-box-en")).click();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.findElement(By.linkText("Contents")).click();
+        driver.navigate().back();
+        var pastUrl = driver.getCurrentUrl();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.navigate().forward();
+        var currentUrl = driver.getCurrentUrl();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.navigate().refresh();
+        System.out.println(pastUrl +"||"+currentUrl);
+  */
+
+
     }
     protected static void driverGet(WebDriver driver, String url) {driver.get(url);}
 }
