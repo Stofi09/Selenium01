@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.sql.SQLOutput;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -31,7 +32,7 @@ public class SeleniumConfig {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        driver.findElement(By.id("a-autoid-0")).click();
 */
-        // Click on cookies
+/*        // Click on cookies
         driverGet(driver, "https://en-gb.facebook.com/");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         List<WebElement> elements = driver.findElements(By.tagName("button"));
@@ -42,6 +43,24 @@ public class SeleniumConfig {
               webElement.click();
             }
         });
+*/
+
+/*        // getTitle,getUrl,getPageSource, close
+        driverGet(driver,url);
+        var title = driver.getTitle();
+        var currentUrl = driver.getCurrentUrl();
+        var pageSource = driver.getPageSource();
+        System.out.println("Title: " + title + " Url: " + currentUrl + " Source :" + pageSource);
+        driver.close(); // Closes the browser without ending the session or killing the driver instance.
+        driver.quit();  // Kills your session and the driver instance and of course closes the browser window.
+*/
+
+    // Practice exercise 1
+        driverGet(driver, url);
+        System.out.println(driver.getTitle() + " " + driver.getTitle().length());
+        System.out.println(driver.getCurrentUrl().equalsIgnoreCase(url));
+        System.out.println(driver.getPageSource().length());
+        driver.quit();
     }
     protected static void driverGet(WebDriver driver, String url) {driver.get(url);}
 }
